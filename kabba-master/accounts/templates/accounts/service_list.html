@@ -1,0 +1,66 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+<br>
+<div class="container">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">Welcome!</div>
+        <div class="panel-body">
+            Maverick Food Services, Ingredients For Your Success!.
+        </div>
+    </div>
+    <div class="row">
+        <h2>Services Information</h2>
+    </div>
+
+<br>
+<a class="btn btn-success  btn-block" href="{% url 'create_service'%}"> Create Service</a>
+    <br>
+    <br>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="bg-info">
+                    <th>Customer</th>
+                    <th>Service Category</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Setup Time</th>
+                    <th>Cleanup Time</th>
+                    <th>Service Charge</th>
+                    <th colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+             
+            
+                {% for serv in service %}
+                <tr>
+                    <td>{{ serv.cust_name }}</td>
+                    <td>{{ serv.service_category }}</td>
+                    <td>{{ serv.description }}</td>
+                    <td>{{ serv.location }}</td>
+                    <td>{{ serv.setup_time }}</td>
+                    <td>{{ serv.cleanup_time }}</td>
+                    <td>${{ serv.service_charge}}</td>
+                    <td><a href="{% url 'update_service' serv.id%}"
+                           class="btn btn-warning">Edit</a>
+                    </td>
+                    <td><a href="{% url 'delete_service' serv.id%}"
+                           
+                           class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            
+            {% endfor %}
+                 
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+{% endblock %}

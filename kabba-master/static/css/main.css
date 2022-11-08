@@ -1,0 +1,37 @@
+
+
+    #logo{
+
+    }
+    body{
+        background-color:blue;
+
+    }
+    #total-orders{
+        background-color: #4cb4c7;
+        
+
+    }
+    #orders-delivered{
+        background-color: #7abecc;
+
+    }
+    #orders-pending{
+        background-color: #7cd1c0;
+
+    }
+    .container {
+        padding: 2rem 0rem;
+      }
+      
+      h4 {
+        margin: 2rem 0rem 1rem;
+      }
+      
+      .table-image {
+        td, th {
+          vertical-align: middle;
+        }
+      }
+
+	

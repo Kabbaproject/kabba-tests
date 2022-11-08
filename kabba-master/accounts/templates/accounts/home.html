@@ -1,0 +1,53 @@
+
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+{% load static %}
+<br>
+<div class="panel panel-primary">
+    <div class="panel-heading">Hello,{{request.user}}</div>
+    <div class="panel-body">
+        Please choose from the following options!.
+    </div>
+</div>
+<br>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card">
+                <img src="{% static "images/customer.jpg" %}" class="card-img-top" alt="customer">
+                <div class="card-body">
+                    <h5 class="card-title">Customers</h5>
+                    <p class="card-text">We love our customers.</p>
+                    <p><a class="btn btn-primary" href="{% url 'customer'%}"
+                          role="button">View details &raquo;</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card">
+                <img src="{% static "images/service.jpg" %}" class="card-img-top" alt="customer">
+                <div class="card-body">
+                    <h5 class="card-title">Services</h5>
+                    <p class="card-text">Great Services.</p>
+                    <p><a class="btn btn-primary" href="{% url 'service'%}"
+                          role="button">View details &raquo;</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card">
+                <img src="{% static "images/cupcakes.jpeg" %}" class="card-img-top" alt="customer">
+                <div class="card-body">
+                    <h5 class="card-title">Products</h5>
+                    <p class="card-text">Great Products.</p>
+                    <p><a class="btn btn-primary" href="{% url 'product'%}"
+                          role="button">View details &raquo;</a></p>
+                </div>
+            </div>
+        </div>
+        </div>
+   
+</div>
+{% endblock %}
